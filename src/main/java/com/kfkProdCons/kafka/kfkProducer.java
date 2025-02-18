@@ -20,11 +20,12 @@ public class kfkProducer {
         }
 
         String topic = props.getProperty("topic");
+        String key = "my-name";  
+        String message = "sangi mangi.. adangooo";
 
         try (KafkaProducer<String, String> producer = new KafkaProducer<>(props)) {
-            String message = "sangi mangi.. adangooo";
 
-            ProducerRecord<String, String> record = new ProducerRecord<>(topic, message);
+            ProducerRecord<String, String> record = new ProducerRecord<>(topic, key, message);
             producer.send(record, (metadata, exception) -> {
                 if (exception == null) {
                     System.out.println("✅ Sent to " + metadata.topic() + " | Partition: " + metadata.partition());
