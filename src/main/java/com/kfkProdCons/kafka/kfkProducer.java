@@ -20,16 +20,11 @@ public class kfkProducer {
         }
 
         String topic = props.getProperty("topic");
-        Map<String, String> dictionary = Map.of(
-            "key1", "Apple Android Ama",
-             "key2", "Anna Caller Madam",
-             "key3", "Kafka Mom Moon",
-             "key4", "Spring Level Civic",
-             "key5", "Tenet Storm Work"
-         ); 
+        String key = "my-name";  
+        String message = "Naa dhaan da Leo";
 
         try (KafkaProducer<String, String> producer = new KafkaProducer<>(props)) {
-            
+
             ProducerRecord<String, String> record = new ProducerRecord<>(topic, key, message);
             producer.send(record, (metadata, exception) -> {
                 if (exception == null) {

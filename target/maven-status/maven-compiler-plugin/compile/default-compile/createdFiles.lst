@@ -1,4 +1,1 @@
-com/kfkProdCons/kafka/kfkConsumer.class
-Main.class
 com/kfkProdCons/kafka/kfkStreamProcessor.class
-com/kfkProdCons/kafka/kfkProducer.class
