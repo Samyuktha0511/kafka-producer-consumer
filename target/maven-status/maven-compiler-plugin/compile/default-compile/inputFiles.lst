@@ -1,2 +1,4 @@
-/workspaces/kafka-producer-consumer/src/main/java/kfkConsumer.java
-/workspaces/kafka-producer-consumer/src/main/java/kfkProducer.java
+/workspaces/kafka-producer-consumer/src/main/java/com/kfkProdCons/kafka/kfkStreamProcessor.java
+/workspaces/kafka-producer-consumer/src/main/java/com/kfkProdCons/kafka/kfkProducer.java
+/workspaces/kafka-producer-consumer/src/main/java/com/kfkProdCons/kafka/kfkConsumer.java
+/workspaces/kafka-producer-consumer/src/main/java/com/kfkProdCons/kafka/Main.java

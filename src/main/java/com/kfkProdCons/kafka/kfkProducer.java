@@ -21,7 +21,7 @@ public class kfkProducer {
 
         String topic = props.getProperty("topic");
         String key = "my-name";  
-        String message = "sangi mangi.. adangooo";
+        String message = "Naa dhaan da Leo";
 
         try (KafkaProducer<String, String> producer = new KafkaProducer<>(props)) {
 
