@@ -2,7 +2,7 @@ package com.kfkProdCons.kafka;
 
 import org.apache.kafka.clients.producer.*;
 import java.io.InputStream;
-import java.util.Properties;
+import java.util.*;
 
 public class kfkProducer {
     public static void produceOnce() {
@@ -29,11 +29,12 @@ public class kfkProducer {
             producer.send(record, (metadata, exception) -> {
                 if (exception == null) {
                     System.out.println("✅ Sent to " + metadata.topic() + " | Partition: " + metadata.partition());
-                    producer.close();
                 } else {
                     System.err.println("❌ Error sending message: " + exception.getMessage());
                 }
             });
+
+            producer.close();
         } catch (Exception e) {
             System.err.println("❌ Error in Kafka producer: " + e.getMessage());
         }

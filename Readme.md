@@ -7,5 +7,5 @@ exercise:
             "key4", "Spring Level Civic",
             "key5", "Tenet Storm Work"
         );
-2)Modify the consumer to consumer from topic "word_length"
+2)Modify the consumer to consumer from topic "transformed"
 3)Write the implementation for ProcessWords_2
