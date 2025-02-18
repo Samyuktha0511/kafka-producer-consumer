@@ -34,8 +34,8 @@ public class kfkStreamProcessor {
         KStream<String, String> transformedStream = processWords(wordStream);
         transformedStream.to(palindromeTopic, Produced.with(Serdes.String(), Serdes.String()));
 
-        // KStream<String, String> transformedStream_2 = processWords(wordStream);
-        // transformedStream_2.to(transformedTopic, Produced.with(Serdes.String(), Serdes.String()));
+        KStream<String, String> transformedStream_2 = processWords(wordStream);
+        transformedStream_2.to(transformedTopic, Produced.with(Serdes.String(), Serdes.String()));
 
         KafkaStreams streams = new KafkaStreams(builder.build(), streamsConfig);
         streams.start();
@@ -58,9 +58,12 @@ public class kfkStreamProcessor {
     //split the sentence into words, 
     //filter the only words that start with "a", 
     //output only the length of the words
-    // public static KStream<String, Long> processWords_2(KStream<String, String> wordStream) {
-        
-    // }
+    public static KStream<String, String> processWords_2(KStream<String, String> wordStream) {
+        return wordStream
+            .flatMapValues(value -> Arrays.asList(value.split(" ")))
+            .filter((key, value) -> value.toLowerCase().startsWith("a"))
+            .mapValues(value -> String.valueOf(value.length()));
+    }
     
 
 }
