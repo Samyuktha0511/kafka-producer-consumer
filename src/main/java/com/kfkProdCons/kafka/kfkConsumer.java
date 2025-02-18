@@ -33,7 +33,7 @@ public class kfkConsumer {
 
 
             for (ConsumerRecord<String, String> record : records) {
-                System.out.println("✅ Received message: " + record.value());
+                System.out.println("✅ Received message- "+ record.key()+ ": "+ record.value());
             }
 
             if (records.isEmpty()) {
